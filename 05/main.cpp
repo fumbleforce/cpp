@@ -56,7 +56,7 @@ bool isTriangleNumber(int number) {
 int squareNumberSum(int n) {
 	int totalSum = 0;
 	cout << "Square numbers:" << endl;
-	for (int i = 0; i < n; i++) {
+	for (int i=0; i < n; i++) {
 		totalSum += i*i;
 		i++;
 		cout << i*i << endl;
@@ -82,7 +82,7 @@ int max(int a, int b) {
 
 int isPrime(int n) {
 	cout << "Is " << n << " prime? ";
-	for (int j = 2; j < n; j++) {
+	for (int j=2; j < n; j++) {
 		if (n % j == 0) {
 			cout << "no." << endl;
 			return false;
@@ -116,13 +116,13 @@ int findGreatestDivisor(int n) {
 
 void compareListOfNumbers(int l[], int length) {
 	cout << "Array: [";
-	for (int j=0; j<length; j++) cout << l[j] << ", "; 
+	for (int j=0; j < length; j++) cout << l[j] << ", "; 
 	cout << "]" << endl;
 
 	int r[3];
-	for (int j=0; j<3; j++) r[j] = 0;
+	for (int j=0; j < 3; j++) r[j] = 0;
 
-	for (int i = 0; i < length; i++) {
+	for (int i=0; i < length; i++) {
 		if (l[i] < 0) r[0]++;
 		else if (l[i] == 0) r[1]++;
 		else r[2]++;
