@@ -1,5 +1,6 @@
 #pragma once
 
+#include "matrix.h"
 
 
 class Vector2
@@ -8,6 +9,8 @@ private:
 	double v[2];
 
 public:
+	Vector2();
+	Vector2(double first, double second);
 	double dot(const Vector2 &rhs) const;
 	double lengthSquared() const;
 	double length() const;
@@ -18,6 +21,8 @@ public:
 	double getY() const { return v[1]; }
 	double setX(double val) { v[0] = val; }
 	double setY(double val) { v[1] = val; }
-
-	std::ostream& operator<<(std::ostream &os);
+	
 };
+
+std::ostream& operator<<(std::ostream &os, const Vector2 &rhs);
+Vector2 operator*(const Vector2 &lhs, const Matrix2x2 &rhs);

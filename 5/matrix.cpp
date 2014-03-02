@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include "matrix.h"
-#include "vector.cpp"
 using namespace std;
 
 void Matrix2x2::print()
@@ -20,7 +19,7 @@ Matrix2x2::Matrix2x2()
 	set(1,1,1);
 }
 
-Matrix2x2::Matrix2x2(int first, int second, int third, int fourth)
+Matrix2x2::Matrix2x2(double first, double second, double third, double fourth)
 {
 	set(0,0,first);
 	set(0,1,second);
@@ -124,21 +123,7 @@ Matrix2x2 Matrix2x2::operator*=(const Matrix2x2 &rhs)
 }
 
 
-Vector2 Matrix2x2::operator*(const Matrix2x2 &rhs)
-{
-	Vector2 product;
-	Matrix m = *this;
-	double sum;
 
-	for (int i = 0; i < 2; i++)
-	{
-		for (int j = 0; j < 2; j++)
-		{
-			sum = product.get(j) + m.get(i, j) * rhs.get(j);
-          	product.set(j, sum);
-		}
-	}
-}
 
 
 

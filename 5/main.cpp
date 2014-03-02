@@ -1,7 +1,11 @@
-#include "matrix.h"
-#include "matrix.cpp"
 #include "vector.h"
+#include "matrix.h"
+#include "solver.h"
+#include "matrix.cpp"
 #include "vector.cpp"
+#include "solver.cpp"
+#include <iostream>
+using namespace std;
 
 
 int main()
@@ -30,7 +34,17 @@ int main()
 
 	A *= B;
 
-	cout << A << endl;
+	cout << "A: " << endl << A << endl;
+
+	Vector2 v = Vector2(2,2);
+
+	cout << "v: " << endl << v << endl;
+
+	Vector2 prod = v * A;
+
+	cout << "product: " << endl << prod << endl;
+
+	solve();
 
 	return 0;
 }

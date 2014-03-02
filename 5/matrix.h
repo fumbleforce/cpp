@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include "vector.h"
+
 
 
 class Matrix2x2
@@ -10,7 +10,7 @@ private:
 
 public:
 	Matrix2x2();
-	Matrix2x2(int first, int second, int third, int fourth);
+	Matrix2x2(double first, double second, double third, double fourth);
 	
 	std::string toString();
 	void print();
@@ -27,7 +27,7 @@ public:
 	Matrix2x2 operator+(const Matrix2x2 &rhs);
 	Matrix2x2 operator-(const Matrix2x2 &rhs);
 
-	Vector2 operator*(const Matrix2x2 &rhs);
+	
 	
 };
 
