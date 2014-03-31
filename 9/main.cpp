@@ -2,6 +2,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <list>
+#include <set>
 using namespace std;
 
 
@@ -96,6 +98,57 @@ int main()
     strings.push_back("Lorem");
     replaceString(strings, "Lorem", "Latin");
     printVector(strings);
+
+    /* 5a, b og c */
+
+    list<Person> persons = list<Person>();
+    insertOrdered(persons, Person("Ole", "Normenn"));
+    insertOrdered(persons, Person("Bjarne", "Elling"));
+    insertOrdered(persons, Person("Alf", "Bjarne"));
+    insertOrdered(persons, Person("Calle", "Anka"));
+
+    list<Person>::iterator it;
+    for (it = persons.begin(); it != persons.end(); it++)
+    {
+        cout << *it;
+    }
+
+    /* 6a */
+
+    set<int> intSet = set<int>();
+    for (i = 0; i <= 100; i++)
+    {
+        intSet.insert(i);
+    }
+
+    /* 6b */
+
+    set<int>::iterator sit;
+    for (sit = intSet.begin(); sit != intSet.end(); sit++)
+    {
+        if (*sit != 2 && *sit % 2 == 0)
+            intSet.erase(sit);
+    }
+
+    for (sit = intSet.begin(); sit != intSet.end(); sit++)
+        cout << *sit << " ";
+    cout << endl;
+
+    /* 6c og d */
+
+    for (sit = intSet.begin(); sit != intSet.end(); sit++)
+    {
+        if (*sit != 3 
+            && *sit % 3 == 0
+            && *sit < 50)
+            intSet.erase(sit);
+    }
+
+    for (sit = intSet.begin(); sit != intSet.end(); sit++)
+        cout << *sit << " ";
+    cout << endl;
+
+    /* 7 */
 
     return 0;
 }

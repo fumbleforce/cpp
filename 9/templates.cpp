@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <vector>
+#include <list>
 using namespace std;
 
 template<typename T>
@@ -73,4 +74,36 @@ void replaceString(vector<string> &strings, string old, string rep)
 
 
 
+Person::Person()
+{
+    firstName = "";
+    lastName = "";
+}
 
+Person::Person(string first, string last)
+{
+    firstName = first;
+    lastName = last;
+}
+
+void insertOrdered(list<Person> &l, Person p)
+{
+    list<Person>::iterator i;
+
+    for (i = l.begin(); i != l.end(); i++)
+    {
+        if (p.getFullName() < (*i).getFullName())
+        {
+            l.insert(i, p);
+            return;
+        }
+
+    }
+    l.insert(l.end(), p);
+}
+
+ostream& operator<<(ostream& os, const Person& p)
+{
+    os << p.getFirstName() << " " << p.getLastName() << endl;
+    return os;
+}

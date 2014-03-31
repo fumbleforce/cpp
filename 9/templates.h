@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <string>
 
 template<typename T>
 class SimpleSet
@@ -81,4 +82,28 @@ class SimpleSet
             delete[] this->data;
             data = dataRezised;
         }
+};
+
+
+
+
+
+
+
+
+
+
+class Person
+{
+private:
+    std::string firstName;
+    std::string lastName;
+
+
+public:
+    Person();
+    Person(std::string first, std::string last);
+    std::string getFirstName() const { return firstName; }
+    std::string getLastName() const { return lastName; }
+    std::string getFullName() const { return firstName + " " + lastName; }
 };
