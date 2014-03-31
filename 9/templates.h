@@ -9,8 +9,8 @@ class SimpleSet
         /** Construct empty set **/
         SimpleSet()
         {
-            this->data = new T[0];
-            maxSize = 0;
+            this->data = new T[10];
+            maxSize = 10;
             currentSize = 0;
         }
         /** Insert i into set, return true if the element was inserted, else false **/
@@ -79,7 +79,7 @@ class SimpleSet
             for (int i = 0; i < currentSize; i++)
                 dataRezised[i] = data[i];
             maxSize = n;
-            delete[] this->data;
+            delete[] data;
             data = dataRezised;
         }
 };

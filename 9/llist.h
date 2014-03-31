@@ -25,5 +25,7 @@ public:
     void insertAtBack(const std::string & elem);
     bool removeFromFront(std::string & output);
     bool removeFromBack(std::string & output);
-    friend std::ostream & operator<<(std::ostream & stream, const linkedList & list );
+    ListNode * search(const string &value);
+    void remove(const string &value);
+    friend std::ostream & operator<<(std::ostream & stream, const LinkedList & list );
 };

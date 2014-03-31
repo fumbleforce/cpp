@@ -1,4 +1,5 @@
 #include "templates.cpp"
+#include "llist.cpp"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -149,6 +150,33 @@ int main()
     cout << endl;
 
     /* 7 */
+
+    LinkedList llist = LinkedList();
+    llist.insertAtFront("1");
+    llist.insertAtFront("2");
+    llist.insertAtBack("3");
+    llist.insertAtFront("4");
+    cout << llist << endl;
+    string out;
+    llist.removeFromBack(out);
+    llist.removeFromFront(out);
+    cout << llist << endl;
+
+    /* 8 */
+
+    cout << llist.search("2")->getValue() << endl;
+    cout << llist.search("1")->getValue() << endl;
+
+    /* 9 */
+
+    llist.insertAtFront("1");
+    llist.insertAtFront("2");
+    llist.insertAtFront("1");
+    llist.insertAtFront("2");
+    llist.insertAtFront("1");
+    llist.insertAtFront("2");
+    llist.remove("1");
+    cout << llist << endl;
 
     return 0;
 }
