@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include "matrix.h"
 using namespace std;
 
@@ -168,7 +169,6 @@ ostream& operator<<(ostream& os, const Matrix& m)
 		os << "Invalid Matrix" << endl;
 		return os;
 	}
-
 	for (int i = 0; i < m.getHeight(); i++)
 	{
 		os << "|";
